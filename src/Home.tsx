@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Countdown from "react-countdown";
 import { Button, CircularProgress, Snackbar } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
+import myImage from "../src/img/turtle.png";
 
 import * as anchor from "@project-serum/anchor";
 
@@ -19,13 +20,173 @@ import {
   shortenAddress,
 } from "./candy-machine";
 
-const ConnectButton = styled(WalletDialogButton)``;
+const ConnectButton = styled(WalletDialogButton)`
+  align-self: center !important;
+  display: flex !important;
+  justify-content: center !important;
+  background-color: aqua !important;
+  color: #080d26 !important;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3) !important;
+  border-radius: 40px !important;
+  width: 300px !important;
+  height: 70px !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+  font-size: 1.5rem !important;
+  transition: 0.2s ease-in-out 0s !important;
+`;
 
 const CounterText = styled.span``; // add your styles here
 
-const MintContainer = styled.div``; // add your styles here
+const MintContainer = styled.div`
+  width: 100%;
 
-const MintButton = styled(Button)``; // add your styles here
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+`; // add your styles here
+
+const MintButton = styled(Button)`
+  align-self: center !important;
+  display: flex !important;
+  justify-content: center !important;
+  background-color: aqua !important;
+  color: #080d26 !important;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3) !important;
+  border-radius: 40px !important;
+  width: 300px !important;
+  height: 70px !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+  font-size: 1.5rem !important;
+  transition: 0.2s ease-in-out 0s !important;
+`; // add your styles here
+
+const MainContainer = styled.div`
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+`;
+
+const BackgroungContainer = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+
+const ContentWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin: auto;
+  height: 100%;
+  width: 60%;
+`;
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  height: 100vh;
+`;
+
+const TitleContent = styled.div`
+  font-weight: bold;
+  height: 5rem;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+`;
+
+const ContainerTexte = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 10rem;
+`;
+const ContainerLeftText = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const ContainerRightImg = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const TextLeft = styled.p`
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.5rem;
+`;
+const Colored = styled.span`
+  font-weight: 700;
+  color: aqua;
+`;
+
+const TextRight = styled.p`
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.5rem;
+
+  color: aqua;
+`;
+const ImgWrapper = styled.div`
+  width: 300px;
+`;
+
+const TurtleImage = styled.img`
+  width: 100%;
+`;
+
+const InfoContainer = styled.div`
+  display: flex;
+  justify-content: center; ;
+`;
+const ContentContainerWallet = styled.div`
+  margin-top: 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+`;
+
+const WalletText = styled.div`
+  margin: none;
+`;
+
+const TitleTexteWallet = styled.span`
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+`;
+
+const FaqContainer = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+const Faqcontent = styled.div`
+  width: 100%;
+`;
+const FaqWrapper = styled.div`
+  border-radius: 0.5rem;
+  display: flex;
+  width: 60%;
+  height: auto;
+`;
+
+const FaqTextWrapper = styled.div``;
+
+const FaqText = styled.div`
+  padding: 1.5rem;
+  background-color: #1f2937;
+`;
 
 export interface HomeProps {
   candyMachineId: anchor.web3.PublicKey;
@@ -166,61 +327,125 @@ const Home = (props: HomeProps) => {
   ]);
 
   return (
-    <main>
-      {wallet && (
-        <p>Wallet {shortenAddress(wallet.publicKey.toBase58() || "")}</p>
-      )}
+    <MainContainer>
+      <BackgroungContainer>
+        <ContentWrapper>
+          <Content>
+            <TitleContent>SOLTURTLE</TitleContent>
+            <ContainerTexte>
+              <ContainerLeftText>
+                <TextLeft>
+                  <Colored>4444</Colored> Turtles
+                  <br /> Are wating for you
+                </TextLeft>
+              </ContainerLeftText>
+              <ContainerRightImg>
+                <TextRight>0.10 SOL</TextRight>
+              </ContainerRightImg>
+            </ContainerTexte>
+            <ImgWrapper>
+              <TurtleImage src={myImage} />
+            </ImgWrapper>
 
-      {wallet && <p>Balance: {(balance || 0).toLocaleString()} SOL</p>}
-
-      {wallet && <p>Total Available: {itemsAvailable}</p>}
-
-      {wallet && <p>Redeemed: {itemsRedeemed}</p>}
-
-      {wallet && <p>Remaining: {itemsRemaining}</p>}
-
-      <MintContainer>
-        {!wallet ? (
-          <ConnectButton>Connect Wallet</ConnectButton>
-        ) : (
-          <MintButton
-            disabled={isSoldOut || isMinting || !isActive}
-            onClick={onMint}
-            variant="contained"
-          >
-            {isSoldOut ? (
-              "SOLD OUT"
-            ) : isActive ? (
-              isMinting ? (
-                <CircularProgress />
+            <MintContainer>
+              {!wallet ? (
+                <ConnectButton>Connect Wallet</ConnectButton>
               ) : (
-                "MINT"
-              )
-            ) : (
-              <Countdown
-                date={startDate}
-                onMount={({ completed }) => completed && setIsActive(true)}
-                onComplete={() => setIsActive(true)}
-                renderer={renderCounter}
-              />
-            )}
-          </MintButton>
-        )}
-      </MintContainer>
+                <MintButton
+                  disabled={isSoldOut || isMinting || !isActive}
+                  onClick={onMint}
+                  variant="contained"
+                >
+                  {isSoldOut ? (
+                    "SOLD OUT"
+                  ) : isActive ? (
+                    isMinting ? (
+                      <CircularProgress />
+                    ) : (
+                      "MINT"
+                    )
+                  ) : (
+                    <Countdown
+                      date={startDate}
+                      onMount={({ completed }) =>
+                        completed && setIsActive(true)
+                      }
+                      onComplete={() => setIsActive(true)}
+                      renderer={renderCounter}
+                    />
+                  )}
+                </MintButton>
+              )}
+              <InfoContainer>
+                <ContentContainerWallet>
+                  {wallet && (
+                    <WalletText>
+                      <TitleTexteWallet>
+                        Balance <br />
+                      </TitleTexteWallet>{" "}
+                      {(balance || 0).toLocaleString()} SOL
+                    </WalletText>
+                  )}
 
-      <Snackbar
-        open={alertState.open}
-        autoHideDuration={6000}
-        onClose={() => setAlertState({ ...alertState, open: false })}
-      >
-        <Alert
-          onClose={() => setAlertState({ ...alertState, open: false })}
-          severity={alertState.severity}
-        >
-          {alertState.message}
-        </Alert>
-      </Snackbar>
-    </main>
+                  {wallet && (
+                    <WalletText>
+                      {" "}
+                      <TitleTexteWallet>
+                        Wallet <br />
+                      </TitleTexteWallet>
+                      {shortenAddress(wallet.publicKey.toBase58() || "")}
+                    </WalletText>
+                  )}
+
+                  {/* {wallet && (
+                  <WalletText>
+                    {itemsRemaining} / {itemsAvailable}
+                  </WalletText>
+                )} */}
+
+                  {/* {wallet && <WalletText>Redeemed: {itemsRedeemed}</WalletText>} */}
+                </ContentContainerWallet>
+              </InfoContainer>
+            </MintContainer>
+            <FaqContainer>
+              <FaqWrapper>
+                <h4>Frequently Asked Questions</h4>
+                <Faqcontent>
+                  <FaqTextWrapper>
+                    <FaqText>
+                      <p>
+                        1. What is this page? <br />
+                        From here you can mint your Home! But first you must
+                        have a wallet. We recommend https://phantom.app/
+                      </p>
+                    </FaqText>
+                    <FaqText>
+                      <p>
+                        2. Does this work on mobile? <br />
+                        Some wallets don’t support mobile so we recommend using
+                        desktop for a better experience
+                      </p>
+                    </FaqText>
+                  </FaqTextWrapper>
+                </Faqcontent>
+              </FaqWrapper>
+            </FaqContainer>
+            <Snackbar
+              open={alertState.open}
+              autoHideDuration={6000}
+              onClose={() => setAlertState({ ...alertState, open: false })}
+            >
+              <Alert
+                onClose={() => setAlertState({ ...alertState, open: false })}
+                severity={alertState.severity}
+              >
+                {alertState.message}
+              </Alert>
+            </Snackbar>
+          </Content>
+        </ContentWrapper>
+      </BackgroungContainer>
+    </MainContainer>
   );
 };
 
