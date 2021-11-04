@@ -147,7 +147,6 @@ const TextRight = styled.p`
 const ImgWrapper = styled.div`
   width: 300px;
   display: flex;
-
   align-self: center;
   margin-bottom: 0.5rem;
 `;
