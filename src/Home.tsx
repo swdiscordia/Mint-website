@@ -244,9 +244,9 @@ const Home = (props: HomeProps) => {
         props.connection
       );
 
-      setItemsAvailable(itemsAvailable);
-      setItemsRemaining(itemsRemaining);
-      setItemsRedeemed(itemsRedeemed);
+      // setItemsAvailable(itemsAvailable);
+      // setItemsRemaining(itemsRemaining);
+      // setItemsRedeemed(itemsRedeemed);
 
       setIsSoldOut(itemsRemaining === 0);
       setStartDate(goLiveDate);
