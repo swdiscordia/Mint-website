@@ -178,29 +178,29 @@ const TitleTexteWallet = styled.span`
   justify-content: center;
 `;
 
-const FaqContainer = styled.div`
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-const Faqcontent = styled.div`
-  width: 100%;
-`;
-const FaqWrapper = styled.div`
-  border-radius: 0.5rem;
-  display: flex;
-  width: 60%;
-  height: auto;
-`;
+// const FaqContainer = styled.div`
+//   width: 100%;
+//   height: auto;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// `;
+// const Faqcontent = styled.div`
+//   width: 100%;
+// `;
+// const FaqWrapper = styled.div`
+//   border-radius: 0.5rem;
+//   display: flex;
+//   width: 60%;
+//   height: auto;
+// `;
 
-const FaqTextWrapper = styled.div``;
+// const FaqTextWrapper = styled.div``;
 
-const FaqText = styled.div`
-  padding: 1.5rem;
-  background-color: #1f2937;
-`;
+// const FaqText = styled.div`
+//   padding: 1.5rem;
+//   background-color: #1f2937;
+// `;
 
 export interface HomeProps {
   candyMachineId: anchor.web3.PublicKey;
