@@ -4,6 +4,8 @@ import Countdown from "react-countdown";
 import { Button, CircularProgress, Snackbar } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
 import myImage from "../src/img/turtle.png";
+import logoImage from "../src/img/logo.png";
+import priceImage from "../src/img/price.png";
 
 import * as anchor from "@project-serum/anchor";
 
@@ -93,11 +95,13 @@ const Content = styled.div`
 `;
 
 const TitleContent = styled.div`
-  font-weight: bold;
-  height: 5rem;
   justify-content: center;
   display: flex;
   align-items: center;
+`;
+
+const TitleImage = styled.img`
+  width: 500px;
 `;
 
 const ContainerTexte = styled.div`
@@ -112,9 +116,15 @@ const ContainerLeftText = styled.div`
   align-items: center;
 `;
 const ContainerRightImg = styled.div`
+  width: 260px;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+const ImageRight = styled.img`
+  width: 100%;
+  height: 100%;
 `;
 const TextLeft = styled.p`
   font-style: italic;
@@ -331,7 +341,9 @@ const Home = (props: HomeProps) => {
       <BackgroungContainer>
         <ContentWrapper>
           <Content>
-            <TitleContent>SOLTURTLE</TitleContent>
+            <TitleContent>
+              <TitleImage src={logoImage} />
+            </TitleContent>
             <ContainerTexte>
               <ContainerLeftText>
                 <TextLeft>
@@ -340,7 +352,9 @@ const Home = (props: HomeProps) => {
                 </TextLeft>
               </ContainerLeftText>
               <ContainerRightImg>
-                <TextRight>0.10 SOL</TextRight>
+                <TextRight>
+                  <ImageRight src={priceImage} />
+                </TextRight>
               </ContainerRightImg>
             </ContainerTexte>
             <ImgWrapper>
