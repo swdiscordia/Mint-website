@@ -69,6 +69,7 @@ const MainContainer = styled.div`
   margin: 0 auto;
   width: 100%;
   height: 100vh;
+  background-color: #080d26;
 `;
 
 const BackgroungContainer = styled.div`
@@ -145,6 +146,10 @@ const TextRight = styled.p`
 `;
 const ImgWrapper = styled.div`
   width: 300px;
+  display: flex;
+
+  align-self: center;
+  margin-bottom: 0.5rem;
 `;
 
 const TurtleImage = styled.img`
@@ -357,11 +362,11 @@ const Home = (props: HomeProps) => {
                 </TextRight>
               </ContainerRightImg>
             </ContainerTexte>
-            <ImgWrapper>
-              <TurtleImage src={myImage} />
-            </ImgWrapper>
 
             <MintContainer>
+              <ImgWrapper>
+                <TurtleImage src={myImage} />
+              </ImgWrapper>
               {!wallet ? (
                 <ConnectButton>Connect Wallet</ConnectButton>
               ) : (
@@ -421,7 +426,7 @@ const Home = (props: HomeProps) => {
                 </ContentContainerWallet>
               </InfoContainer>
             </MintContainer>
-            <FaqContainer>
+            {/* <FaqContainer>
               <FaqWrapper>
                 <h4>Frequently Asked Questions</h4>
                 <Faqcontent>
@@ -443,7 +448,7 @@ const Home = (props: HomeProps) => {
                   </FaqTextWrapper>
                 </Faqcontent>
               </FaqWrapper>
-            </FaqContainer>
+            </FaqContainer> */}
             <Snackbar
               open={alertState.open}
               autoHideDuration={6000}
