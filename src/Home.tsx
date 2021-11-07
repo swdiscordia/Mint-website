@@ -179,6 +179,13 @@ const TitleTexteWallet = styled.span`
   justify-content: center;
 `;
 
+const ShareText = styled.p`
+  margin: 0;
+  font-weight: bold;
+  margin-top: 2rem;
+  font-style: italic;
+`;
+
 // const FaqContainer = styled.div`
 //   width: 100%;
 //   height: auto;
@@ -426,6 +433,7 @@ const Home = (props: HomeProps) => {
                 </ContentContainerWallet>
               </InfoContainer>
             </MintContainer>
+            <ShareText>Share your SolTurtle On twitter ! 🔥</ShareText>
             {/* <FaqContainer>
               <FaqWrapper>
                 <h4>Frequently Asked Questions</h4>
