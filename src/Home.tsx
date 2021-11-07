@@ -130,11 +130,12 @@ const ImageRight = styled.img`
 const TextLeft = styled.p`
   font-style: italic;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 2.2rem;
 `;
 const Colored = styled.span`
   font-weight: 700;
   color: aqua;
+  font-size: 2.5rem;
 `;
 
 const TextRight = styled.p`
@@ -352,7 +353,7 @@ const Home = (props: HomeProps) => {
               <ContainerLeftText>
                 <TextLeft>
                   <Colored>4444</Colored> Turtles
-                  <br /> Are wating for you
+                  <br /> Are waiting for you
                 </TextLeft>
               </ContainerLeftText>
               <ContainerRightImg>
