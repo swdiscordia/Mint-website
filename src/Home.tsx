@@ -47,7 +47,7 @@ const MintContainer = styled.div`
   flex-direction: column;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-`; // add your styles here
+`; // add your styles here//
 
 const MintButton = styled(Button)`
   align-self: center !important;
