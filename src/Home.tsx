@@ -109,8 +109,37 @@ const ContainerTexte = styled.div`
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-  height: 10rem;
 `;
+
+const WavesContainer = styled.div`
+  width: 50%;
+  background-color: #15202b;
+  display: flex;
+  align-self: center;
+  height: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: -2rem;
+`;
+const WavesContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: none;
+  justify-content: center;
+  margin: auto;
+`;
+
+const WavesText = styled.p`
+  margin: 0;
+
+  display: flex;
+`;
+
+const SoldOut = styled.span`
+  font-weight: bold;
+  margin-left: 0.5rem;
+`;
+
 const ContainerLeftText = styled.div`
   display: flex;
   justify-content: center;
@@ -142,7 +171,6 @@ const TextRight = styled.p`
   font-style: italic;
   font-weight: 500;
   font-size: 1.5rem;
-
   color: aqua;
 `;
 const ImgWrapper = styled.div`
@@ -164,9 +192,10 @@ const ContentContainerWallet = styled.div`
   margin-top: 0.5rem;
   border-radius: 0.5rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   width: 300px;
+  justify-content: space-around;
 `;
 
 const WalletText = styled.div`
@@ -371,6 +400,22 @@ const Home = (props: HomeProps) => {
             </ContainerTexte>
 
             <MintContainer>
+              <WavesContainer>
+                <WavesContent>
+                  <WavesText>
+                    🌊 Wave 1 : 144/4444 &ensp;- 🗓️ 07/11/2021 - 🕖 7PM UTC ✅{" "}
+                    <SoldOut>SOLD OUT</SoldOut>
+                  </WavesText>
+                  <WavesText>
+                    {" "}
+                    🌊 Wave 2 : 1200/4444 - 🗓️ 09/11/2021 - 🕓 4PM UTC
+                  </WavesText>
+                  <WavesText>
+                    {" "}
+                    🌊 Wave 3 : 3100/4444 - 🗓️ TBA - 🕐 TBA{" "}
+                  </WavesText>
+                </WavesContent>
+              </WavesContainer>
               <ImgWrapper>
                 <TurtleImage src={myImage} />
               </ImgWrapper>
