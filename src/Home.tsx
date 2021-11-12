@@ -412,7 +412,7 @@ const Home = (props: HomeProps) => {
                   </WavesText>
                   {/* <WavesText>
                     {" "}
-                    🌊 Wave 3 : 3100/4444 - 🗓️ TBA - 🕐 TBA{" "}//t
+                    🌊 Wave 3 : 3100/4444 - 🗓️ TBA - 🕐 TBA{" "}
                   </WavesText> */}
                 </WavesContent>
               </WavesContainer>
@@ -467,24 +467,23 @@ const Home = (props: HomeProps) => {
                       {shortenAddress(wallet.publicKey.toBase58() || "")}
                     </WalletText>
                   )}
+                  {wallet && (
+                    <WalletText className="items">
+                      <span>
+                        <span className="item-title">Total supply:</span>{" "}
+                        {itemsAvailable}
+                      </span>
+                      <span>
+                        <span className="item-title">Remaining:</span>{" "}
+                        {itemsRemaining}
+                      </span>
+                      <span>
+                        <span className="item-title">Redeemed:</span>{" "}
+                        {itemsRedeemed}
+                      </span>
+                    </WalletText>
+                  )}
                 </ContentContainerWallet>
-
-                {wallet && (
-                  <WalletText className="items">
-                    <span>
-                      <span className="item-title">Total supply:</span>{" "}
-                      {itemsAvailable}
-                    </span>
-                    <span>
-                      <span className="item-title">Remaining:</span>{" "}
-                      {itemsRemaining}
-                    </span>
-                    <span>
-                      <span className="item-title">Redeemed:</span>{" "}
-                      {itemsRedeemed}
-                    </span>
-                  </WalletText>
-                )}
               </InfoContainer>
             </MintContainer>
             <ShareText>Share your SolTurtle On twitter ! 🔥</ShareText>
