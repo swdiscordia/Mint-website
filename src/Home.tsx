@@ -403,12 +403,12 @@ const Home = (props: HomeProps) => {
               <WavesContainer>
                 <WavesContent>
                   <WavesText>
-                    🌊 Wave 1 : 144/4444 &ensp;- 🗓️ 07/11/2021 - 🕖 7PM UTC ✅{" "}
+                    🌊 Wave 1 : 144/4444 &ensp;- 🗓️ 07/11/2021 - 🕖 7 PM UTC ✅{" "}
                     <SoldOut>SOLD OUT</SoldOut>
                   </WavesText>
                   <WavesText>
                     {" "}
-                    🌊 Wave 2 : 1200/4444 - 🗓️ 09/11/2021 - 🕓 4PM UTC
+                    🌊 Wave 2 : 1200/4444 - 🗓️ 09/11/2021 - 🕓 6 PM UTC
                   </WavesText>
                   <WavesText>
                     {" "}
