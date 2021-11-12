@@ -254,9 +254,9 @@ const Home = (props: HomeProps) => {
   const [isSoldOut, setIsSoldOut] = useState(false); // true when items remaining is zero
   const [isMinting, setIsMinting] = useState(false); // true when user got to press MINT
 
-  // const [itemsAvailable, setItemsAvailable] = useState(0);
-  // const [itemsRedeemed, setItemsRedeemed] = useState(0);
-  // const [itemsRemaining, setItemsRemaining] = useState(0);
+  const [itemsAvailable, setItemsAvailable] = useState(0);
+  const [itemsRedeemed, setItemsRedeemed] = useState(0);
+  const [itemsRemaining, setItemsRemaining] = useState(0);
 
   const [alertState, setAlertState] = useState<AlertState>({
     open: false,
@@ -285,9 +285,9 @@ const Home = (props: HomeProps) => {
         props.connection
       );
 
-      // setItemsAvailable(itemsAvailable);
-      // setItemsRemaining(itemsRemaining);
-      // setItemsRedeemed(itemsRedeemed);
+      setItemsAvailable(itemsAvailable);
+      setItemsRemaining(itemsRemaining);
+      setItemsRedeemed(itemsRedeemed);
 
       setIsSoldOut(itemsRemaining === 0);
       setStartDate(goLiveDate);
@@ -410,10 +410,10 @@ const Home = (props: HomeProps) => {
                     {" "}
                     🌊 Wave 2 : 1200/4444 - 🗓️ 09/11/2021 - 🕓 6 PM UTC
                   </WavesText>
-                  <WavesText>
+                  {/* <WavesText>
                     {" "}
                     🌊 Wave 3 : 3100/4444 - 🗓️ TBA - 🕐 TBA{" "}
-                  </WavesText>
+                  </WavesText> */}
                 </WavesContent>
               </WavesContainer>
               <ImgWrapper>
@@ -447,7 +447,7 @@ const Home = (props: HomeProps) => {
                   )}
                 </MintButton>
               )}
-              <InfoContainer>
+              <InfoContainer className="infos-wrapper">
                 <ContentContainerWallet>
                   {wallet && (
                     <WalletText>
@@ -467,15 +467,24 @@ const Home = (props: HomeProps) => {
                       {shortenAddress(wallet.publicKey.toBase58() || "")}
                     </WalletText>
                   )}
-
-                  {/* {wallet && (
-                  <WalletText>
-                    {itemsRemaining} / {itemsAvailable}
-                  </WalletText>
-                )} */}
-
-                  {/* {wallet && <WalletText>Redeemed: {itemsRedeemed}</WalletText>} */}
                 </ContentContainerWallet>
+
+                {wallet && (
+                  <WalletText className="items">
+                    <span>
+                      <span className="item-title">Total supply:</span>{" "}
+                      {itemsAvailable}
+                    </span>
+                    <span>
+                      <span className="item-title">Remaining:</span>{" "}
+                      {itemsRemaining}
+                    </span>
+                    <span>
+                      <span className="item-title">Redeemed:</span>{" "}
+                      {itemsRedeemed}
+                    </span>
+                  </WalletText>
+                )}
               </InfoContainer>
             </MintContainer>
             <ShareText>Share your SolTurtle On twitter ! 🔥</ShareText>
