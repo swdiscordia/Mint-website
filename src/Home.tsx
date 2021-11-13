@@ -447,10 +447,10 @@ const Home = (props: HomeProps) => {
                   )}
                 </MintButton>
               )}
-              <InfoContainer className="infos-wrapper">
-                <ContentContainerWallet>
+              <InfoContainer>
+                <ContentContainerWallet className="infos-container">
                   {wallet && (
-                    <WalletText>
+                    <WalletText className="wallet-items">
                       <TitleTexteWallet>
                         Balance <br />
                       </TitleTexteWallet>{" "}
@@ -459,7 +459,7 @@ const Home = (props: HomeProps) => {
                   )}
 
                   {wallet && (
-                    <WalletText>
+                    <WalletText className="wallet-items">
                       {" "}
                       <TitleTexteWallet>
                         Wallet <br />
@@ -467,21 +467,22 @@ const Home = (props: HomeProps) => {
                       {shortenAddress(wallet.publicKey.toBase58() || "")}
                     </WalletText>
                   )}
+
                   {wallet && (
-                    <WalletText className="items">
-                      <span>
+                    <div className="wallet-items">
+                      <span className="items-unit-wrap">
                         <span className="item-title">Total supply:</span>{" "}
-                        {itemsAvailable}
+                        <WalletText>{itemsAvailable}</WalletText>
                       </span>
-                      <span>
+                      <span className="items-unit-wrap">
                         <span className="item-title">Remaining:</span>{" "}
-                        {itemsRemaining}
+                        <WalletText>{itemsRemaining}</WalletText>
                       </span>
-                      <span>
+                      <span className="items-unit-wrap">
                         <span className="item-title">Redeemed:</span>{" "}
-                        {itemsRedeemed}
+                        <WalletText>{itemsRedeemed}</WalletText>
                       </span>
-                    </WalletText>
+                    </div>
                   )}
                 </ContentContainerWallet>
               </InfoContainer>
