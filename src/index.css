@@ -13,35 +13,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-.infos-container {
-  display: flex !important;
-  justify-content: space-between !important;
-  width: 60% !important;
-}
-
-.items-wrapper {
-  margin-left: 1rem;
-}
-
-.infos-wrapper {
-  margin-top: 1rem;
-}
-
-.items-unit-wrap {
-  display: flex;
-  flex-direction: row;
-}
-
-.item-title {
-  font-weight: 700;
-  margin-right: 0.5rem;
-}
-
-.wallet-items {
-  width: 33%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}

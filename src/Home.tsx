@@ -42,7 +42,6 @@ const CounterText = styled.span``; // add your styles here
 
 const MintContainer = styled.div`
   width: 100%;
-
   display: flex;
   flex-direction: column;
   margin-top: 0.5rem;
@@ -91,7 +90,6 @@ const Content = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-
   height: 100vh;
 `;
 
@@ -131,7 +129,6 @@ const WavesContent = styled.div`
 
 const WavesText = styled.p`
   margin: 0;
-
   display: flex;
 `;
 
@@ -254,9 +251,9 @@ const Home = (props: HomeProps) => {
   const [isSoldOut, setIsSoldOut] = useState(false); // true when items remaining is zero
   const [isMinting, setIsMinting] = useState(false); // true when user got to press MINT
 
-  const [itemsAvailable, setItemsAvailable] = useState(0);
-  const [itemsRedeemed, setItemsRedeemed] = useState(0);
-  const [itemsRemaining, setItemsRemaining] = useState(0);
+  // const [itemsAvailable, setItemsAvailable] = useState(0);
+  // const [itemsRedeemed, setItemsRedeemed] = useState(0);
+  // const [itemsRemaining, setItemsRemaining] = useState(0);
 
   const [alertState, setAlertState] = useState<AlertState>({
     open: false,
@@ -285,9 +282,9 @@ const Home = (props: HomeProps) => {
         props.connection
       );
 
-      setItemsAvailable(itemsAvailable);
-      setItemsRemaining(itemsRemaining);
-      setItemsRedeemed(itemsRedeemed);
+      // setItemsAvailable(itemsAvailable);
+      // setItemsRemaining(itemsRemaining);
+      // setItemsRedeemed(itemsRedeemed);
 
       setIsSoldOut(itemsRemaining === 0);
       setStartDate(goLiveDate);
@@ -410,10 +407,6 @@ const Home = (props: HomeProps) => {
                     {" "}
                     🌊 Wave 2 : 1200/4444 - 🗓️ 09/11/2021 - 🕓 6 PM UTC
                   </WavesText>
-                  {/* <WavesText>
-                    {" "}
-                    🌊 Wave 3 : 3100/4444 - 🗓️ TBA - 🕐 TBA{" "}//z
-                  </WavesText> */}
                 </WavesContent>
               </WavesContainer>
               <ImgWrapper>
@@ -448,9 +441,9 @@ const Home = (props: HomeProps) => {
                 </MintButton>
               )}
               <InfoContainer>
-                <ContentContainerWallet className="infos-container">
+                <ContentContainerWallet>
                   {wallet && (
-                    <WalletText className="wallet-items">
+                    <WalletText>
                       <TitleTexteWallet>
                         Balance <br />
                       </TitleTexteWallet>{" "}
@@ -459,7 +452,7 @@ const Home = (props: HomeProps) => {
                   )}
 
                   {wallet && (
-                    <WalletText className="wallet-items">
+                    <WalletText>
                       {" "}
                       <TitleTexteWallet>
                         Wallet <br />
@@ -468,22 +461,13 @@ const Home = (props: HomeProps) => {
                     </WalletText>
                   )}
 
-                  {wallet && (
-                    <div className="wallet-items">
-                      <span className="items-unit-wrap">
-                        <span className="item-title">Total supply:</span>{" "}
-                        <WalletText>{itemsAvailable}</WalletText>
-                      </span>
-                      <span className="items-unit-wrap">
-                        <span className="item-title">Remaining:</span>{" "}
-                        <WalletText>{itemsRemaining}</WalletText>
-                      </span>
-                      <span className="items-unit-wrap">
-                        <span className="item-title">Redeemed:</span>{" "}
-                        <WalletText>{itemsRedeemed}</WalletText>
-                      </span>
-                    </div>
-                  )}
+                  {/* {wallet && (
+                  <WalletText>
+                    {itemsRemaining} / {itemsAvailable}
+                  </WalletText>
+                )} */}
+
+                  {/* {wallet && <WalletText>Redeemed: {itemsRedeemed}</WalletText>} */}
                 </ContentContainerWallet>
               </InfoContainer>
             </MintContainer>
