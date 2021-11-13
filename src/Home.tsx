@@ -412,7 +412,7 @@ const Home = (props: HomeProps) => {
                   </WavesText>
                   {/* <WavesText>
                     {" "}
-                    🌊 Wave 3 : 3100/4444 - 🗓️ TBA - 🕐 TBA{" "}
+                    🌊 Wave 3 : 3100/4444 - 🗓️ TBA - 🕐 TBA{" "}//z
                   </WavesText> */}
                 </WavesContent>
               </WavesContainer>
