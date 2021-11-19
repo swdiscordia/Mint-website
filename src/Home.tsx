@@ -373,7 +373,7 @@ const Home = (props: HomeProps) => {
     props.candyMachineId,
     props.connection,
   ]);
-
+  //*
   return (
     <MainContainer>
       <BackgroungContainer>
