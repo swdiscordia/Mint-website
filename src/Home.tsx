@@ -385,7 +385,7 @@ const Home = (props: HomeProps) => {
             <ContainerTexte>
               <ContainerLeftText>
                 <TextLeft>
-                  <Colored>4444</Colored> Turtles
+                  <Colored>1344</Colored> Turtles
                   <br /> Are waiting for you
                 </TextLeft>
               </ContainerLeftText>
@@ -400,16 +400,12 @@ const Home = (props: HomeProps) => {
               <WavesContainer>
                 <WavesContent>
                   <WavesText>
-                    🌊 Wave 1 : 144/4444 &ensp;- 🗓️ 07/11/2021 - 🕖 7 PM UTC ✅{" "}
+                    🌊 Wave 1 : 144/1344 &ensp;- 🗓️ 07/11/2021 - 🕖 7 PM UTC ✅{" "}
                     <SoldOut>SOLD OUT</SoldOut>
                   </WavesText>
                   <WavesText>
                     {" "}
-                    🌊 Wave 2 : 1200/4444 - 🗓️ 09/11/2021 - 🕓 6 PM UTC
-                  </WavesText>
-                  <WavesText>
-                    {" "}
-                    🌊 Wave 3 : 3100/4444 - 🗓️ TBA - 🕐 TBA{" "}
+                    🌊 Wave 2 : 1200/1344 - 🗓️ 09/11/2021 - 🕓 6 PM UTC
                   </WavesText>
                 </WavesContent>
               </WavesContainer>
